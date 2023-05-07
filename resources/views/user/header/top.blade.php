@@ -39,12 +39,18 @@
                         <a href="contact-us.html" class="d-lg-show">Contact Us</a>
                         <a href="my-account.html" class="d-lg-show">My Account</a>
                         
-                        @if (Route::has('login'))
+                        
+                       @if (Route::has('login'))
                         
                         @auth
-                        <x-app-layout>
-                        </x-app-layout>
+
+                        <span style="">  
+                            <x-app-layout>
+                            </x-app-layout>
+                        </span>
+                      
                         @else
+                       
 
                             <a href="{{ route('login')}}" class="d-lg-show login sign-in"><i
                                 class="w-icon-account"></i>Sign In</a>
