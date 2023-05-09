@@ -105,9 +105,9 @@
 					<!-- /Notifications -->
 					
 					<!-- User Menu -->
-					<li class="nav-item" style="margin-left:30px; margin-top:12px;">
+					<li class="nav-item" style="margin-left:30px; margin-top:10px;">
 						<span class="user-img">
-							<img  class="rounded-circle" src="admin/assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor">
+							<img  class="rounded-circle" src="admin/assets/img/profiles/avatar-01.jpg" width="39" alt="Ryan Taylor">
 						</span>
 					</li>
 					<li class="nav-item" style="margin-right:20px; margin-top:12px; margin-left:-35px">

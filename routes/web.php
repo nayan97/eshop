@@ -2,11 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ProductCategoryController;
 
 
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
+
+
+ROute::resource('/product_cat', ProductCategoryController::class);
+
 
 Route::middleware([
     'auth:sanctum',
