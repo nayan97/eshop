@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Product_cat;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductCategoryController extends Controller
 {
@@ -12,8 +13,12 @@ class ProductCategoryController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-       return view('admin.user.product_cat.index');
+    {      $data=Product_cat::latest() -> get();
+       return view('admin.user.product_cat.index',[
+        'all_data'    => $data,
+      
+
+       ]);
     }
 
     /**
@@ -31,7 +36,13 @@ class ProductCategoryController extends Controller
     {
         $data=new Product_cat;
 
+             //validate
+       $this -> validate ($request,[
+        'name'   => 'required'
+      ]);
+      
         $data ->name=$request -> name;
+        $data ->slug=Str::slug($request -> name);
 
         $data -> save();
         return redirect() -> back() -> with('success', 'Data added successfully');
@@ -49,9 +60,16 @@ class ProductCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $data=Product_cat::latest() -> get();
+        $edit_data=Product_cat::findOrFail($id);
+        return view('admin.user.product_cat.edit',[
+         'all_data'    => $data,
+         'edit'        => $edit_data,
+         
+ 
+        ]);
     }
 
     /**
@@ -65,8 +83,11 @@ class ProductCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $delete_data = Product_cat::findOrFail($id);
+        $delete_data -> delete();
+        return back() ->with('success', 'Category deleted successfuly');
+
     }
 }

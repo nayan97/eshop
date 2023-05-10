@@ -28,6 +28,9 @@
 							<li> 
 								<a href="{{ url('product_cat')}}"><i class="fe fe-user-plus"></i> <span>Category</span></a>
 							</li>
+							<li> 
+								<a href="{{ url('product')}}"><i class="fe fe-user-plus"></i> <span>Products</span></a>
+							</li>
 							<li class="submenu">
 								<a href="#"><i class="fe fe-document"></i> <span> Authentication </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">

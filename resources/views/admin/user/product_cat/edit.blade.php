@@ -68,7 +68,7 @@
 						<div class="col-md-5">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Add new product category</h4>
+                                        <h4 class="card-title">Edit product category</h4>
                                     </div>
                                     <div class="card-body">
 
@@ -81,10 +81,10 @@
 
                                     @endif
 
-                                        <form action="{{ route('product_cat.store')}}" method="POST">
+                                        <form action="#" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                <label>Category Name</label>
+                                                <label>Category</label>
                                                 <input name="name" type="text" class="form-control">
                                             </div>
                                         
@@ -94,7 +94,7 @@
                                         </form>
                                     </div>
                                 </div>
-                         
+                        
                       
 						</div>
 					</div>

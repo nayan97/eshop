@@ -14,7 +14,7 @@
 						<div class="col-md-7">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">All Product Category</h4>
+									<h4 class="card-title">All Product</h4>
 								</div>
 								<div class="card-body">
 
@@ -41,8 +41,8 @@
                                             <td>{{$item -> created_at -> diffForHumans()}}</td>
                                             <td>
                                                 <!----<a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a>-->
-                                                <a class="btn btn-sm btn-warning" href="{{ route('product_cat.edit', $item -> id ) }}"><i class="fe fe-edit"></i></a>
-                                                <form onclick="return confirm('Are you sure to delete this')" action="{{ route('product_cat.destroy', $item -> id ) }}" class="d-inline delete-form" method="POST">
+                                                <a class="btn btn-sm btn-warning" href="{{ route('product.edit', $item -> id ) }}"><i class="fe fe-edit"></i></a>
+                                                <form onclick="return confirm('Are you sure to delete this')" action="{{ route('product.destroy', $item -> id ) }}" class="d-inline delete-form" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                     <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
@@ -68,7 +68,7 @@
 						<div class="col-md-5">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Add new product category</h4>
+                                        <h4 class="card-title">Add new product</h4>
                                     </div>
                                     <div class="card-body">
 
@@ -81,10 +81,14 @@
 
                                     @endif
 
-                                        <form action="{{ route('product_cat.store')}}" method="POST">
+                                        <form action="#" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                <label>Category Name</label>
+                                                <label>Tittle</label>
+                                                <input name="name" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Desccription</label>
                                                 <input name="name" type="text" class="form-control">
                                             </div>
                                         

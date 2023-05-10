@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('product_cats', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name') -> unique();
+            $table->string('slug') -> unique();
+            $table->boolean('status') -> default(true);
+            $table->boolean('trash') -> default(false);
             $table->timestamps();
         });
     }

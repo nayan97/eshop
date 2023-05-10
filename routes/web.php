@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 
 
@@ -10,7 +11,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'redirect']);
 
 
-ROute::resource('/product_cat', ProductCategoryController::class);
+Route::resource('/product_cat', ProductCategoryController::class);
+Route::resource('/product', ProductController::class);
 
 
 Route::middleware([
