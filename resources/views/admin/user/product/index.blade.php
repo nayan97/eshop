@@ -11,7 +11,7 @@
 
                           <!-- /Page Header -->
                 <div class="row">
-						<div class="col-md-7">
+						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header">
 									<h4 class="card-title">All Product</h4>
@@ -25,8 +25,8 @@
                                         <thead> 
                                                 <tr>
                                                 <td>#</td>
-                                                <td>Name</td>
-                                                <td>Slug</td>
+                                                <td>Title</td>
+                                                <td>Deccription</td>
                                                 <td>Created at</td>
                                                 <td>Action</td>
                                             </tr>
@@ -36,8 +36,8 @@
                                          
                                          <tr>
                                             <td>{{$loop ->index + 1}}</td>
-                                            <td>{{$item -> name}}</td>
-                                            <td>{{$item -> slug}}</td>
+                                            <td>{{$item -> title}}</td>
+                                            <td>{{$item -> description}}</td>
                                             <td>{{$item -> created_at -> diffForHumans()}}</td>
                                             <td>
                                                 <!----<a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a>-->
@@ -65,7 +65,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-5">
+						<div class="col-md-4">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Add new product</h4>
@@ -81,15 +81,40 @@
 
                                     @endif
 
-                                        <form action="#" method="POST">
+                                        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <label>Tittle</label>
-                                                <input name="name" type="text" class="form-control">
+                                                <input name="title" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label>Desccription</label>
-                                                <input name="name" type="text" class="form-control">
+                                                <input name="desc" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Quantity</label>
+                                                <input name="quantity" type="number" min="0" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Price</label>
+                                                <input name="price" type="number" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Discount Price</label>
+                                                <input name="dis_price" type="number" min="number" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Catergory</label>
+                                              <select name="cat" id="">
+                                                <option value="" selected="">Select one</option>
+                                                @foreach ($category as $cat )
+                                                 <option value="{{$cat-> name}}">{{$cat-> name}}</option> 
+                                                @endforeach
+                                              </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Image</label>
+                                                <input name="photo" type="file" class="form-control">
                                             </div>
                                         
                                             <div class="text-right">

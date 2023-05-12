@@ -52,7 +52,7 @@
                         @else
                        
 
-                            <a href="{{ route('login')}}" class="d-lg-show login sign-in"><i
+                            <a href="{{ route('login') }}" class="d-lg-show login sign-in"><i
                                 class="w-icon-account"></i>Sign In</a>
                             <span class="delimiter d-lg-show">/</span>
                              <a href="{{ route('register')}}" class="ml-0 d-lg-show login register">Register</a>
