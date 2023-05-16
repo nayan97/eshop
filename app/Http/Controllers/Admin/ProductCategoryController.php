@@ -16,6 +16,7 @@ class ProductCategoryController extends Controller
     {      $data=Product_cat::latest() -> get();
        return view('admin.user.product_cat.index',[
         'all_data'    => $data,
+        'form'      => 'create',
       
 
        ]);
@@ -67,6 +68,7 @@ class ProductCategoryController extends Controller
         return view('admin.user.product_cat.edit',[
          'all_data'    => $data,
          'edit'        => $edit_data,
+         'form'      => 'edit',
          
  
         ]);

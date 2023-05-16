@@ -19,6 +19,7 @@ class ProductController extends Controller
        
         return view('admin.user.product.index',[
             'all_data' => $data,
+            'form'      => 'create',
             'category' => $category
         ]);
     }
@@ -79,7 +80,15 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category=Product_cat::all();
+        $edit_data=Product::findOrFail($id);
+        $data=Product::latest() -> get();
+        return view('admin.user.product.index',[
+         'all_data'    => $data,
+         'edit_data'   => $edit_data,
+         'form'        => 'edit',
+         'category'    => $category
+        ]);
     }
 
     /**
@@ -87,7 +96,27 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product =Product::findOrFail($id);
+
+        // img manage
+        $img =$request -> photo;
+        $file_name =time().'.'. $img->getClientOriginalExtension();
+ 
+        $request -> photo -> move('img/product', $file_name);
+ 
+       $product->title =$request->title;
+       $product->slug =Str::slug($request -> name);
+       $product->description= $request->desc;
+       $product->quantity= $request->quantity;
+       $product->price= $request->price;
+       $product->dis_price= $request->dis_price;
+       $product->category= $request->cat;
+ 
+       $product->image= $file_name;
+
+       $product->save();
+
+       return back()-> with('success', 'Product Updateded successfuly');
     }
 
     /**
@@ -95,6 +124,10 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product =Product::findOrFail($id);
+
+        $product->delete();
+
+        return redirect()->back()-> with('success', 'Product deleted successfuly');
     }
 }

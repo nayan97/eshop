@@ -1,6 +1,12 @@
+
+
 @extends('admin.app')
+
+
 @section('main-content')
+
 	<!-- Page Wrapper -->
+   
         <div class="page-wrapper">
 			
             <div class="content container-fluid">
@@ -66,7 +72,8 @@
 							</div>
 						</div>
 						<div class="col-md-5">
-                                <div class="card">
+                            @if ($form == 'create') 
+                            <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Add new product category</h4>
                                     </div>
@@ -93,7 +100,42 @@
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> 
+                            @endif
+
+                            @if ($form == 'edit') 
+                             <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Add new product category</h4>
+                                    </div>
+                                    <div class="card-body">
+
+                                    @if( $errors -> any())
+                                    <p class="alert alert-danger">{{$errors -> first()}} <button class="close" data-dismiss="alert">&times;</button></p>
+
+                                    @endif
+                                    @if(Session::has('success'))
+                                    <p class="alert alert-success">{{Session::get('success')}} <button class="close" data-dismiss="alert">&times;</button></p>
+
+                                    @endif
+
+                                        <form action="{{ route('product_cat.store')}}" method="POST">
+                                            @csrf
+                                            <div class="form-group">
+                                                <label>Category Name</label>
+                                                <input name="name" type="text" class="form-control">
+                                            </div>
+                                        
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+                            @endif
+
+                            
+                               
                          
                       
 						</div>
