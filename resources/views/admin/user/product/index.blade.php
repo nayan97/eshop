@@ -138,7 +138,7 @@
                                 @if ($form == 'edit')
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4 class="card-title">Edit Product</h4>
+                                            <h4 class="card-title">Edit Product</h4><span style="padding:0px"><a class="btn btn-primary float-right" href="{{ url('product')}}">Back</a></span>
                                         </div>
                                         <div class="card-body">
 

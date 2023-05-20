@@ -59,6 +59,8 @@ class ProductController extends Controller
 
       $product->image= $file_name;
 
+  
+
     
 
       $product->save();
@@ -100,9 +102,13 @@ class ProductController extends Controller
 
         // img manage
         $img =$request -> photo;
-        $file_name =time().'.'. $img->getClientOriginalExtension();
+        if ( $img) {
+            $file_name =time().'.'. $img->getClientOriginalExtension();
  
         $request -> photo -> move('img/product', $file_name);
+          $product->image= $file_name;
+        }
+       
  
        $product->title =$request->title;
        $product->slug =Str::slug($request -> name);
@@ -112,7 +118,7 @@ class ProductController extends Controller
        $product->dis_price= $request->dis_price;
        $product->category= $request->cat;
  
-       $product->image= $file_name;
+     
 
        $product->save();
 

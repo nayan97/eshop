@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\user;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\user;
 
 class HomeController extends Controller
 {
@@ -27,5 +28,13 @@ class HomeController extends Controller
     public function index()
     {
         return view('/user.home');
+    }
+
+    // for single Product
+
+    public function singleproduct($id)
+    {
+       $product = Product::find($id);
+        return view('user.page.singlepro',compact('product'));
     }
 }

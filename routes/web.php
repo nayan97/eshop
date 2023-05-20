@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductCategoryController;
 
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/product-details/{id}', [HomeController::class, 'singleproduct']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
 
