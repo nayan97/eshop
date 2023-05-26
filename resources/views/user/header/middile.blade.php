@@ -3,7 +3,7 @@
                     <div class="header-left mr-md-4">
                         <a href="#" class="mobile-menu-toggle  w-icon-hamburger" aria-label="menu-toggle">
                         </a>
-                        <a href="demo1.html" class="logo ml-lg-0">
+                        <a href="{{ url('/')}}" class="logo ml-lg-0">
                             <img src="assets/images/logo.png" alt="logo" width="144" height="45" />
                         </a>
                         <form method="get" action="#"
@@ -109,7 +109,7 @@
                                 </div>
 
                                 <div class="cart-action">
-                                    <a href="cart.html" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
+                                    <a href="{{url('/showcart')}}" class="btn btn-dark btn-outline btn-rounded">View Cart</a>
                                     <a href="checkout.html" class="btn btn-primary  btn-rounded">Checkout</a>
                                 </div>
                             </div>

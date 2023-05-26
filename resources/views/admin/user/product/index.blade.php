@@ -110,8 +110,9 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Discount Price</label>
-                                                    <input name="dis_price" type="number" min="number" class="form-control">
+                                                    <input name="dis_price" type="number" class="form-control">
                                                 </div>
+                                             
                                                 <div class="form-group">
                                                     <label>Catergory</label>
                                                 <select name="cat" id="">

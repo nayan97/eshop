@@ -7,7 +7,9 @@ use App\Http\Controllers\Admin\ProductCategoryController;
 
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/product-details/{id}', [HomeController::class, 'singleproduct']);
+Route::get('/singleproduct/{id}', [HomeController::class, 'singleproduct']);
+Route::post('/cart/{id}', [HomeController::class, 'cart']);
+Route::get('/showcart', [HomeController::class, 'showcart']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
 

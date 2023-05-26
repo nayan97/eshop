@@ -1,11 +1,11 @@
 <div class="header-left">
-                                        <div class="dropdown category-dropdown has-border" data-visible="true">
-                                            <a href="#" class="category-toggle text-dark" role="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="true" data-display="static"
-                                                title="Browse Categories">
-                                                <i class="w-icon-category"></i>
-                                                <span>Browse Categories</span>
-                                            </a>
+                                    <div class="dropdown category-dropdown has-border" data-visible="true">
+                                                <a href="#" class="category-toggle" role="button" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="true" data-display="static"
+                                                    title="Browse Categories">
+                                                    <i class="w-icon-category"></i>
+                                                    <span>Browse Categories</span>
+                                                </a>
 
                                             <div class="dropdown-box">
                                                 <ul class="menu vertical-menu category-menu">
@@ -206,7 +206,7 @@
                                         <nav class="main-nav">
                                             <ul class="menu active-underline">
                                                 <li class="active">
-                                                    <a href="demo1.html">Home</a>
+                                                    <a href="{{ url('/')}}">Home</a>
                                                 </li>
                                                 <li>
                                                     <a href="shop-banner-sidebar.html">Shop</a>
