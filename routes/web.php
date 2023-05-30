@@ -10,6 +10,9 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/singleproduct/{id}', [HomeController::class, 'singleproduct']);
 Route::post('/cart/{id}', [HomeController::class, 'cart']);
 Route::get('/showcart', [HomeController::class, 'showcart']);
+Route::get('/removecart/{id}',[HomeController::class, 'removecart']);
+Route::get('/checkout', [HomeController::class, 'checkout']);
+Route::post('/checkoutorders', [HomeController::class, 'checkoutorders']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
 

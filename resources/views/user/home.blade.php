@@ -187,6 +187,10 @@
 
     <!-- Main JS -->
     <script src="assets/js/main.min.js"></script>
+
+    <!--bt js-->
+    <script src="assets/js/bootstrap.min.js"></script>
+
 </body>
 
 

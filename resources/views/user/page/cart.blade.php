@@ -213,6 +213,18 @@
         .pro-pro{
             margin-top:260px
         }
+        .del-btn{
+            color:#fff!important;
+            background-color:red;
+            border-radius:8px;
+            border: 2px solid red;
+        }
+        .del-btn:hover{
+            color:#000!important;
+            background-color:#ddd;
+            border-radius:8px!important;
+            border: 2px solid #ddd;
+        }
     </style>
 
 </head>
@@ -262,10 +274,11 @@
                                 <th>Quantity</th>
                                 <th>Price</th>
                                 <th class="hidden-xs">&nbsp;</th>
-                                <th></th>
+                                <th>Remove Cart</th>
                                 </tr>
                             </thead>
                              <tbody>
+                                <?php $totalprice=0; ?>
                                 @foreach ($carts as $cart )
                                     <tr>
                                         <td class="hidden-xs">
@@ -285,10 +298,12 @@
                                             <a href="#"><i class="ti-close"></i></a>
                                         </td>
                                         <td>
-
+                                             <a class="btn btn-sm btn-danger del-btn" onclick="return confirm('Are you sure to delete this')" href="{{url('/removecart',$cart->id)}}"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
+                                    <?php $totalprice=$totalprice + $cart->price ?>
                                 @endforeach
+
 
                             </tbody>
                         </table>
@@ -305,17 +320,15 @@
                         <h6 class="upper">Order Details</h6>
                         <hr>
                         <ul class="nav">
-                            <li>Cart subtotal:<span class="pull-right">$299.99</span>
+                            <li>Cart subtotal:<span class="pull-right">${{$totalprice}}</span>
                             </li>
-                            <li>Shipping:<span class="pull-right">$9.99</span>
+                            <li>Shipping:<span class="pull-right">$0</span>
                             </li>
                         </ul>
                         <hr>
-                        <h6 class="upper">Order total:<span class="pull-right">$309.99</span></h6>
+                        <h6 class="upper">Order total:<span class="pull-right">${{$totalprice}}</span></h6>
                         </div>
-                        <p><a href="#" class="btn btn-primary btn-block">Checkout</a>
-                        </p>
-                        <p><a href="#" class="bg-up btn btn-dark-out btn-block">Update Cart</a>
+                        <p><a href="{{ url('/checkout')}}" class="btn btn-primary btn-block">Checkout</a>
                         </p>
                         <br>
                     </div>
