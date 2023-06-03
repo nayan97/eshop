@@ -25,6 +25,13 @@
 							<li class="menu-title"> 
 								<span>Pages</span>
 							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-warning"></i> <span>Orders</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="{{ url('/orders')}}">Orders</a></li>
+									<li><a href="error-500.html">500 Error </a></li>
+								</ul>
+							</li>
 							<li> 
 								<a href="{{ url('product_cat')}}"><i class="fe fe-user-plus"></i> <span>Category</span></a>
 							</li>

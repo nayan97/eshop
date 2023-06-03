@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 
@@ -15,6 +16,8 @@ Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::post('/checkoutorders', [HomeController::class, 'checkoutorders']);
 
 Route::get('/home', [HomeController::class, 'redirect']);
+
+Route::get('/orders', [OrderController::class, 'index']);
 
 
 Route::resource('/product_cat', ProductCategoryController::class);
