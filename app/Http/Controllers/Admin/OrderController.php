@@ -14,4 +14,17 @@ public function index()
     $order=Checkout::all();
     return view('admin.user.orders.index', compact('order'));
 }
+
+//delivered option
+public function delivered($id)
+{
+    $order=Checkout::find($id);
+    $order->delivery_status="Delivered";
+    $order->payment_status="Paid";
+
+    $order->save();
+
+    return redirect()->back();
+}
+
 }

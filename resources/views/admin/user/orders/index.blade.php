@@ -59,6 +59,16 @@
                                             <td>{{$item -> payment_status}}</td>
                                             <td>{{$item -> delivery_status}}</td>
                                             <td>{{$item -> created_at -> diffForHumans()}}</td>
+                                            @if ($item->delivery_status=="Prosseing")
+                                                <td>
+                                                    <a href="{{ url('delivered', $item->id)}}" onclick="return confirm('Are You Sure???')" class="btn btn-primary btn-sm">Delivered</a>
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <p style="font-weight:bold; font-style: italic;">Delivered</p>
+                                                </td>
+                                            @endif
+                                           
                                        </tr>
                                          
                                          
