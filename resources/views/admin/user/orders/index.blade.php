@@ -40,6 +40,7 @@
                                                 <td>Delivery Status</td>
                                                 <td>Created At</td>
                                                 <td>Action</td>
+                                                <td>Send Email</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -68,6 +69,9 @@
                                                     <p style="font-weight:bold; font-style: italic;">Delivered</p>
                                                 </td>
                                             @endif
+                                            <td>
+                                                <a href="{{ url('sendemail', $item->id)}}" onclick="return confirm('Are You Sure???')" class="btn btn-primary btn-sm">Send Email</a>
+                                            </td>
                                            
                                        </tr>
                                          

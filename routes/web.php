@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\ProductCategoryController;
 
 Route::get('/orders', [OrderController::class, 'index']);
 Route::get('/delivered/{id}', [OrderController::class, 'delivered']);
+Route::get('/sendemail/{id}', [OrderController::class, 'sendemail']);
+Route::post('/emailnote/{id}', [OrderController::class, 'emailnote']);
 
 
 Route::resource('/product_cat', ProductCategoryController::class);
