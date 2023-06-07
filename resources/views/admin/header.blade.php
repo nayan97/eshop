@@ -2,7 +2,7 @@
 			
 				<!-- Logo -->
                 <div class="header-left">
-                    <a href="index.html" class="logo">
+                    <a href="{{url('/home')}}" class="logo">
 						<img src="admin/assets/img/logo.png" alt="Logo">
 					</a>
 					<a href="index.html" class="logo logo-small">

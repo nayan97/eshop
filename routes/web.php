@@ -24,7 +24,6 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth','verified');
 
-
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/singleproduct/{id}', [HomeController::class, 'singleproduct']);
 Route::post('/cart/{id}', [HomeController::class, 'cart']);

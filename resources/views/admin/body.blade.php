@@ -7,19 +7,20 @@
                 <!-- /Page Header -->
 
                 <div class="row">
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="col-xl-2 col-sm-6 col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="dash-widget-header">
                                     <span class="dash-widget-icon text-primary border-primary">
-                                        <i class="fe fe-users"></i>
+                                        
+                                        <i class="fe fe-credit-card"></i>
                                     </span>
                                     <div class="dash-count">
-                                        <h3>168</h3>
+                                        <h3>{{$totalproduct}}</h3>
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
-                                    <h6 class="text-muted">Doctors</h6>
+                                    <h6 class="text-muted">Products</h6>
                                     <div class="progress progress-sm">
                                         <div class="progress-bar bg-primary w-50"></div>
                                     </div>
@@ -27,20 +28,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="col-xl-2 col-sm-6 col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="dash-widget-header">
                                     <span class="dash-widget-icon text-success">
-                                        <i class="fe fe-credit-card"></i>
+                                    <i class="fe fe-users"></i>
+                                       
                                     </span>
                                     <div class="dash-count">
-                                        <h3>487</h3>
+                                        <h3>{{$totaluser}}</h3>
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
                                     
-                                    <h6 class="text-muted">Patients</h6>
+                                    <h6 class="text-muted">User</h6>
                                     <div class="progress progress-sm">
                                         <div class="progress-bar bg-success w-50"></div>
                                     </div>
@@ -48,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="col-xl-2 col-sm-6 col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="dash-widget-header">
@@ -56,12 +58,12 @@
                                         <i class="fe fe-money"></i>
                                     </span>
                                     <div class="dash-count">
-                                        <h3>485</h3>
+                                        <h3>{{$totalorder}}</h3>
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
                                     
-                                    <h6 class="text-muted">Appointment</h6>
+                                    <h6 class="text-muted">Orders</h6>
                                     <div class="progress progress-sm">
                                         <div class="progress-bar bg-danger w-50"></div>
                                     </div>
@@ -69,20 +71,62 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="col-xl-2 col-sm-6 col-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="dash-widget-header">
                                     <span class="dash-widget-icon text-warning border-warning">
-                                        <i class="fe fe-folder"></i>
+                                        <i class="fe fe-money"></i>
                                     </span>
                                     <div class="dash-count">
-                                        <h3>$62523</h3>
+                                        <h3>${{$total_revenue}}</h3>
                                     </div>
                                 </div>
                                 <div class="dash-widget-info">
                                     
                                     <h6 class="text-muted">Revenue</h6>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-warning w-50"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-warning border-warning">
+                                        <i class="fe fe-money"></i>
+                                    </span>
+                                    <div class="dash-count">
+                                        <h3>{{$deliverypending}}</h3>
+                                    </div>
+                                </div>
+                                <div class="dash-widget-info">
+                                    
+                                    <h6 class="text-muted">Delivery Prossesing</h6>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-warning w-50"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-sm-6 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="dash-widget-header">
+                                    <span class="dash-widget-icon text-warning border-warning">
+                                        <i class="fe fe-home"></i>
+                                    </span>
+                                    <div class="dash-count">
+                                        <h3>{{$totaldeliverd}}</h3>
+                                    </div>
+                                </div>
+                                <div class="dash-widget-info">
+                                    
+                                    <h6 class="text-muted">Delivered</h6>
                                     <div class="progress progress-sm">
                                         <div class="progress-bar bg-warning w-50"></div>
                                     </div>

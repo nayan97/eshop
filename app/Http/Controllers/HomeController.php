@@ -26,7 +26,20 @@ class HomeController extends Controller
                 return view('/user.home',compact('product'));
                 
             }else{
-                return view('/admin.home');
+                $totalproduct=Product::all()-> count();
+                $totaluser=User::all()-> count();
+                $totalorder=Checkout::all()-> count();
+                $totalprice=Checkout::all();
+
+                $total_revenue=0;
+                foreach($totalprice as $totalprices){
+                    $total_revenue= $total_revenue+$totalprices->price;
+                }
+
+                $totaldeliverd=Checkout::Where('delivery_status','=','delivered')->get()->count();
+                $deliverypending=Checkout::Where('delivery_status','=','Prosseing')->get()->count();
+
+                return view('/admin.home', compact('totalproduct','totaluser','totalorder','total_revenue','totaldeliverd','deliverypending'));
             }
         }else{
             return redirect() -> back();
