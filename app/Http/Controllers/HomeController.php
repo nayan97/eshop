@@ -176,4 +176,34 @@ class HomeController extends Controller
      
     }
 
+    // my account
+
+    public function myaccount()
+    {
+        
+        if (Auth::id()) {
+            $user=Auth::user();
+            $logid=$user->id;
+            $order=checkout::where('user_id', '=',$logid)->get();
+
+        return view('user.page.myacc', compact('order'));
+             
+
+               
+        }else{
+            return redirect('login');
+        }
+     
+    }
+
+    // cancel order
+
+    public function cancelorder($id)
+    {
+        $order=Checkout::find($id);
+        $order->delivery_status='Canceled by User';
+        $order->save();
+        return redirect()->back();
+    }
+
 }

@@ -54,4 +54,6 @@ public function emailnote(Request $request, $id)
     return redirect()->back();
 }
 
+// 
+
 }
