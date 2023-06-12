@@ -5,14 +5,6 @@
                     </div>
                     <div class="header-right">
                         
-
-                        <div class="dropdown">
-                            <a href="#currency">USD</a>
-                            <div class="dropdown-box">
-                                <a href="#USD">USD</a>
-                                <a href="#EUR">EUR</a>
-                            </div>
-                        </div>
                         <!-- End of DropDown Menu -->
 
                         <div class="dropdown">

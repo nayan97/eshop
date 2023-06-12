@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\admin\emailLoginController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 
 Route::get('/orders', [OrderController::class, 'index']);
@@ -21,6 +22,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('auth/google', [emailLoginController::class,'googlelogin']);
+Route::get('auth/google/callback', [emailLoginController::class,'googlecallback']);
 
 Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth','verified');
 
