@@ -44,7 +44,7 @@
                 </x-button>
             </div>
             <div>
-                <a class="btn btn-primary" href="{{url ('auth/google')}}">Login By Google</a>
+                <a class="btn btn-primary btn-sm" href="{{url ('auth/google')}}">Login By Google</a>
             </div>
         </form>
     </x-authentication-card>

@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
 
     <!-- Default CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/demo1.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
 
 </head>
 
@@ -60,7 +60,7 @@
     <div class="page-wrapper">
         <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>
         <!-- Start of Header -->
-            <header class="header">
+            <header class="header header-border mb-6">
 
             @include('user.header.top')
                         <!-- End of Header Top -->
@@ -87,7 +87,7 @@
         <!-- End of Header -->
 
         <!-- Start of Main-->
-    <div class="main">
+    <div class="main mb-10 pb-1 ">
     <div class="container">
                 
                 <!-- Start of Page Content -->

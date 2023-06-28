@@ -30,8 +30,8 @@
                         @foreach ($products as $goods)
                             <div class="product-wrap">
                                 <div class="product text-center">
-                                <img style="height:230px;" src="{{ url('/img/product/'. $goods ->image)}}" alt="Product"
-                                                width="300" height="338" />
+                                    <a href="{{ url('/singleproduct',$goods->id)}}"> <img style="height:230px;" src="{{ url('/img/product/'. $goods ->image)}}" alt="Product"
+                                                width="300" height="338" /></a>
                                     <div class="product-details">
                                         <h4 class="product-name"><a href="{{ url('/singleproduct',$goods->id)}}">{{$goods -> title}}</a>
                                         </h4>

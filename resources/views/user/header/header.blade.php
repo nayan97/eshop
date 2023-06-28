@@ -1,4 +1,4 @@
-<div class="header-left">
+<div class="header-left mr-md-4">
                                     <div class="dropdown category-dropdown has-border" data-visible="true">
                                                 <a href="#" class="category-toggle" role="button" data-toggle="dropdown"
                                                     aria-haspopup="true" aria-expanded="true" data-display="static"
@@ -209,78 +209,16 @@
                                                     <a href="{{ url('/')}}">Home</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-banner-sidebar.html">Shop</a>
-
-                                                    <!-- Start of Megamenu -->
-                                                    <ul class="megamenu">
-                                                        <li>
-                                                            <h4 class="menu-title">Shop Pages</h4>
-                                                            <ul>
-                                                                <li><a href="shop-banner-sidebar.html">Banner With Sidebar</a></li>
-                                                                <li><a href="shop-boxed-banner.html">Boxed Banner</a></li>
-                                                       
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <h4 class="menu-title">Shop Layouts</h4>
-                                                            <ul>
-                                                                <li><a href="shop-grid-3cols.html">3 Columns Mode</a></li>
-                                                                <li><a href="shop-grid-4cols.html">4 Columns Mode</a></li>
-                                                           
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <h4 class="menu-title">Product Pages</h4>
-                                                            <ul>
-                                                                <li><a href="product-variable.html">Variable Product</a></li>
-                                                                <li><a href="product-featured.html">Featured &amp; Sale</a></li>
-                                                                <li><a href="product-accordion.html">Data In Accordion</a></li>
-                                                          
-                                                                <li><a href="product-without-sidebar.html">Without Sidebar</a></li>
-                                                                <li><a href="product-video.html">360<sup>o</sup> &amp; Video<span
-                                                                            class="tip tip-new">New</span></a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <h4 class="menu-title">Product Layouts</h4>
-                                                            <ul>
-                                                                <li><a href="product-default.html">Default<span
-                                                                            class="tip tip-hot">Hot</span></a></li>
-                                                                <li><a href="product-vertical.html">Vertical Thumbs</a></li>
-                                                                <li><a href="product-grid.html">Grid Images</a></li>
-                                                                <li><a href="product-masonry.html">Masonry</a></li>
-                                                             
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                    <!-- End of Megamenu -->
-                                                </li>
-                                                <li>
-                                                    <a href="vendor-dokan-store.html">Vendor</a>
+                                                    <a href="blog.html">product</a>
                                                     <ul>
+                                                        <li><a href="blog.html">Classic</a></li>
+                                            
                                                         <li>
-                                                            <a href="vendor-dokan-store-list.html">Store Listing</a>
-                                                            <ul>
-                                                                <li><a href="vendor-dokan-store-list.html">Store listing 1</a></li>
-                                                                <li><a href="vendor-wcfm-store-list.html">Store listing 2</a></li>
-                                                                <li><a href="vendor-wcmp-store-list.html">Store listing 3</a></li>
-                                                                <li><a href="vendor-wc-store-list.html">Store listing 4</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="vendor-dokan-store.html">Vendor Store</a>
-                                                            <ul>
-                                                                <li><a href="vendor-dokan-store.html">Vendor Store 1</a></li>
-                                                                <li><a href="vendor-wcfm-store-product-grid.html">Vendor Store 2</a>
-                                                                </li>
-                                                                <li><a href="vendor-wcmp-store-product-grid.html">Vendor Store 3</a>
-                                                                </li>
-                                                                <li><a href="vendor-wc-store-product-grid.html">Vendor Store 4</a>
-                                                                </li>
-                                                            </ul>
+                                                            <a href="post-single.html">Single Post</a>
                                                         </li>
                                                     </ul>
                                                 </li>
+                                           
                                                 <li>
                                                     <a href="blog.html">Blog</a>
                                                     <ul>
@@ -298,14 +236,9 @@
                                                         <li><a href="about-us.html">About Us</a></li>
                                                         <li><a href="become-a-vendor.html">Become A Vendor</a></li>
                                                         <li><a href="contact-us.html">Contact Us</a></li>
-                                                        <li><a href="faq.html">FAQs</a></li>
-                                                        <li><a href="error-404.html">Error 404</a></li>
-                                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                                        <li><a href="cart.html">Cart</a></li>
-                                                        <li><a href="checkout.html">Checkout</a></li>
-                                                        <li><a href="my-account.html">My Account</a></li>
-                                                        <li><a href="compare.html">Compare</a></li>
+                                                        <li><a href="{{url('/showcart')}}">Cart</a></li>
+                                                        <li><a href="{{url('/checkout')}}">Checkout</a></li>
+                                                        <li><a href="{{url('myaccount')}}">My Account</a></li>
                                                     </ul>
                                                 </li>
                                                

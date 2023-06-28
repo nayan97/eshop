@@ -52,49 +52,17 @@
     <link rel="stylesheet" href="assets/vendor/swiper/swiper-bundle.min.css">
 
     <!-- Default CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/demo1.min.css">
+  
+    <link rel="stylesheet" type="text/css" href="assets/css/style.min.css">
 
-    <style type="text/css">
-        .checkout .order-summary-wrapper {
-            padding: 2.5rem 3rem 3rem;
-            border: 1px solid #eee;
-            border-radius: 3px;
-        }
-        .checkout-form input{
-            border-radius: 3px;
-            border: 1px solid #eee;
-        
-        }
-        .checkout-form select{
-            position: relative;
-            max-width: 14.6rem!important;
-            min-height: auto;
-            width: 100%!important;
-            height: 100%;
-            padding-left: 9px;
-            padding-right: 27px;
-            border: 1px solid #eee!important;
-            border-radius: 3px;
-            color: inherit;
-            background-color: transparent;
-            font-size: 1.2rem;
-            font-family: inherit;
-            letter-spacing: inherit;
-            z-index: 1;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            cursor: pointer;
-        
-        }
-      
-    </style>
+
 </head>
 
 <body class="home">
     <div class="page-wrapper">
         <h1 class="d-none">Wolmart - Responsive Marketplace HTML Template</h1>
         <!-- Start of Header -->
-            <header class="header">
+        <header class="header header-border mb-6">
 
             @include('user.header.top')
                         <!-- End of Header Top -->
@@ -121,12 +89,7 @@
         <!-- End of Header -->
 
         <!-- Start of Main-->
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br><br>
+
         <main class="main checkout">
             <!-- Start of Breadcrumb -->
             <div class="page-content">
@@ -285,10 +248,6 @@
                                                     <div class="card-header">
                                                         <a href="#paypal" class="expand">Paypal</a>
                                                     </div>
-                                                    <a href="https://www.paypal.com/us/webapps/mpp/paypal-popup" class="text-primary paypal-que" onclick="javascript:window.open('https://www.paypal.com/us/webapps/mpp/paypal-popup','WIPaypal',
-                                                        'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); 
-                                                        return false;">What is PayPal?
-                                                    </a>
                                                     <div id="paypal" class="card-body collapsed">
                                                         <p class="mb-0">
                                                             Pay via PayPal, you can pay with your credit cart if you
@@ -300,7 +259,7 @@
                                         </div>
 
                                         <div class="form-group place-order pt-6">
-                                            <button type="submit" class="btn btn-dark btn-block btn-rounded">Place Order</button>
+                                            <button type="submit" class="btn btn-dark btn-block btn-rounded">Place Order by Cash</button>
                                         </div>
                                     </div>
                                 </div></div>
@@ -453,13 +412,16 @@
 
     <!-- Plugin JS File -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
+
     <script src="assets/vendor/jquery.plugin/jquery.plugin.min.js"></script>
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/zoom/jquery.zoom.js"></script>
     <script src="assets/vendor/jquery.countdown/jquery.countdown.min.js"></script>
+    
+    <script src="assets/vendor/sticky/sticky.js"></script>
     <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script src="assets/vendor/skrollr/skrollr.min.js"></script>
 
+    <script src="assets/vendor/skrollr/skrollr.min.js"></script>
     <!-- Swiper JS -->
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 

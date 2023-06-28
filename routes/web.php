@@ -35,6 +35,7 @@ Route::get('/showcart', [HomeController::class, 'showcart']);
 Route::get('/removecart/{id}',[HomeController::class, 'removecart']);
 Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::post('/checkoutorders', [HomeController::class, 'checkoutorders']);
+Route::post('/stripe/{id}', [HomeController::class, 'checkoutorders']);
 
 Route::get('/myaccount', [HomeController::class, 'myaccount']);
 Route::get('/cancelorder/{id}', [HomeController::class, 'cancelorder']);
