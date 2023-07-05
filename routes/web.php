@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
@@ -37,5 +38,11 @@ Route::get('/checkout', [HomeController::class, 'checkout']);
 Route::post('/checkoutorders', [HomeController::class, 'checkoutorders']);
 Route::post('/stripe/{id}', [HomeController::class, 'checkoutorders']);
 
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/myaccount', [HomeController::class, 'myaccount']);
 Route::get('/cancelorder/{id}', [HomeController::class, 'cancelorder']);
+
+Route::get('/blog', [BlogController::class, 'blog']);
+
+

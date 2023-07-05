@@ -176,6 +176,18 @@ class HomeController extends Controller
      
     }
 
+    // About US
+
+    public function about(){
+        return view('user.page.about');
+    }
+
+     // contact US
+
+     public function contact(){
+        return view('user.page.contact');
+     }
+
     // my account
 
     public function myaccount()

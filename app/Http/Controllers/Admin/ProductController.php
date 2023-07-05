@@ -50,20 +50,19 @@ class ProductController extends Controller
        $request -> photo -> move('img/product', $file_name);
 
       $product->title =$request->title;
-      $product->slug =Str::slug($request -> name);
+      $product->slug =Str::slug($request -> title);
       $product->description= $request->desc;
       $product->quantity= $request->quantity;
       $product->price= $request->price;
       $product->dis_price= $request->dis_price;
-      $product->category= $request->cat;
+ 
 
       $product->image= $file_name;
-
-  
-
-    
-
+      
       $product->save();
+      $product -> ProductCats() -> attach($request-> cat);
+
+     
 
       return redirect()->back()-> with('success', 'Product Uploaded successfuly');
 

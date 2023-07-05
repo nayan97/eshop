@@ -220,9 +220,9 @@
                                                 </li>
                                            
                                                 <li>
-                                                    <a href="blog.html">Blog</a>
+                                                    <a href="{{url('/blog')}}">Blog</a>
                                                     <ul>
-                                                        <li><a href="blog.html">Classic</a></li>
+                                                        <li><a href="{{url('/blog')}}">Classic</a></li>
                                             
                                                         <li>
                                                             <a href="post-single.html">Single Post</a>
@@ -230,12 +230,12 @@
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a href="about-us.html">Pages</a>
+                                                    <a href="{{url('/about')}}">Pages</a>
                                                     <ul>
 
-                                                        <li><a href="about-us.html">About Us</a></li>
-                                                        <li><a href="become-a-vendor.html">Become A Vendor</a></li>
-                                                        <li><a href="contact-us.html">Contact Us</a></li>
+                                                        <li><a href="{{url('/about')}}">About Us</a></li>
+                                                      
+                                                        <li><a href="{{url('/contact')}}">Contact Us</a></li>
                                                         <li><a href="{{url('/showcart')}}">Cart</a></li>
                                                         <li><a href="{{url('/checkout')}}">Checkout</a></li>
                                                         <li><a href="{{url('myaccount')}}">My Account</a></li>
