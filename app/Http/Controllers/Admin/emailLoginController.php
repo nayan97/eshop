@@ -22,13 +22,13 @@ function googlecallback()
             
             $user = Socialite::driver('google')->user();
        
-            $finduser = User::where('google_id', $user->getId)->first();
-       
+            $finduser = User::where('google_id', $user->id)->first();
+     
             if(!$finduser){
                     $newUser = User::create([
-                        'name' => $user->getName,
-                        'email' => $user->getEmail,
-                        'google_id'=> $user->getId,
+                        'name' => $user->name,
+                        'email' => $user->email,
+                        'google_id'=> $user->id,
                         'password' => encrypt('123456dummy')
                 ]);
       

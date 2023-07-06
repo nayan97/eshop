@@ -225,7 +225,7 @@
                                                         <li><a href="{{url('/blog')}}">Classic</a></li>
                                             
                                                         <li>
-                                                            <a href="post-single.html">Single Post</a>
+                                                            <a href="{{ url('/post-single')}}">Single Post</a>
                                                         </li>
                                                     </ul>
                                                 </li>

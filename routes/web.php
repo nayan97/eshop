@@ -44,5 +44,6 @@ Route::get('/myaccount', [HomeController::class, 'myaccount']);
 Route::get('/cancelorder/{id}', [HomeController::class, 'cancelorder']);
 
 Route::get('/blog', [BlogController::class, 'blog']);
+Route::get('/post-single', [BlogController::class, 'postSingle']);
 
 

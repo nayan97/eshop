@@ -118,7 +118,7 @@
                                                 <select name="cat" id="">
                                                     <option value="" selected="">Select one</option>
                                                     @foreach ($category as $cat )
-                                                    <option value="{{$cat-> name}}">{{$cat-> name}}</option> 
+                                                    <option value="{{$cat-> id}}">{{$cat-> name}}</option> 
                                                     @endforeach
                                                 </select>
                                                 </div>
