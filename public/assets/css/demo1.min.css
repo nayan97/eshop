@@ -7439,6 +7439,7 @@ textarea {
 }
 
 .mfp-container {
+
   padding: 4rem 2rem;
 }
 
@@ -7591,6 +7592,7 @@ textarea {
 }
 
 .newsletter-popup {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

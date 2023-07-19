@@ -5,6 +5,7 @@ use App\Models\cart;
 use App\Models\Checkout;
 use App\Models\user;
 use App\Models\Product;
+use App\Models\Product_cat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,8 +14,13 @@ class HomeController extends Controller
         // For home page
 
         public function index()
-        {  $product=Product::all();
-            return view('/user.home',compact('product'));
+        {
+            $product=Product::all();
+
+
+          $cat =Product_cat::all();
+
+            return view('/user.home',compact('product','cat'));
         }
 
     // for admin page
@@ -24,7 +30,7 @@ class HomeController extends Controller
             if (Auth:: user()->user_type == '0') {
                 $product=Product::all();
                 return view('/user.home',compact('product'));
-                
+
             }else{
                 $totalproduct=Product::all()-> count();
                 $totaluser=User::all()-> count();
@@ -56,48 +62,48 @@ class HomeController extends Controller
         return view('user.page.singlepro',compact('product'));
     }
 
-    
-     // cart table  
+
+     // cart table
      public function cart(Request $request, $id)
      {
- 
+
          if (Auth::id()) {
                  $user =Auth::user();
                  $product =Product::find($id);
                  $cart =Cart::find($id);
- 
+
                  $cart =new cart;
- 
+
                  $cart -> name = $user->name;
                  $cart -> email = $user->email;
                  $cart -> cell = $user->cell;
                  $cart -> user_id = $user->id;
                  $cart  -> product_title =$product->title;
-                 
-                 if($product->dis_price!=NULL) 
+
+                 if($product->dis_price!=NULL)
                  {
                      $cart  -> price =$product->dis_price*$request->qty;
                  }
                  else
                  {
-                     $cart  -> price =$product->price*$request->qty; 
+                     $cart  -> price =$product->price*$request->qty;
                  }
                  $cart  -> product_id =$product->id;
                  $cart  -> photo =$product->image;
                  $cart  -> product_qty=$request->qty;
- 
+
                  $cart -> save();
                  return redirect() -> back();
- 
-                
+
+
          }else{
              return redirect('login');
          }
-      
+
      }
-     
+
     public function showcart()
-    {   
+    {
         if (Auth::id()) {
             $logid=Auth::user()->id;
             $carts=cart::where('user_id', '=',$logid)->get();
@@ -106,7 +112,7 @@ class HomeController extends Controller
             return redirect('login');
         }
 
-    
+
     }
 
     public function removecart($id)
@@ -120,7 +126,7 @@ class HomeController extends Controller
     //Checkout Part
 
     public function checkout()
-    {   
+    {
         if (Auth::id()) {
             $logid=Auth::user()->id;
             $carts=cart::where('user_id', '=',$logid)->get();
@@ -129,7 +135,7 @@ class HomeController extends Controller
             return redirect('login');
         }
 
-    
+
     }
 
     // Order Table
@@ -165,15 +171,15 @@ class HomeController extends Controller
                 $allcarts=cart::find($cart-> id);
                 $allcarts->delete();
        }
-               
-                return redirect()->back()->with('success','Your Order Submited Successfully');
-             
 
-               
+                return redirect()->back()->with('success','Your Order Submited Successfully');
+
+
+
         }else{
             return redirect('login');
         }
-     
+
     }
 
     // About US
@@ -192,20 +198,20 @@ class HomeController extends Controller
 
     public function myaccount()
     {
-        
+
         if (Auth::id()) {
             $user=Auth::user();
             $logid=$user->id;
             $order=checkout::where('user_id', '=',$logid)->get();
 
         return view('user.page.myacc', compact('order'));
-             
 
-               
+
+
         }else{
             return redirect('login');
         }
-     
+
     }
 
     // cancel order

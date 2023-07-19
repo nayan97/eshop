@@ -63,7 +63,7 @@
             @include('user.header.top')
                         <!-- End of Header Top -->
 
-            @include('user.header.middile')                   
+            @include('user.header.middile')
                      <!-- End of Header Middle -->
 
                         <div class="header-bottom sticky-content fix-top sticky-header has-dropdown">
@@ -71,7 +71,7 @@
                                 <div class="inner-wrap">
 
                                 @include('user.header.header')
-                                    
+
                                           <!-- End of Header left -->
 
                                 </div>
@@ -83,15 +83,15 @@
         <!-- Start of Main-->
         <main class="main">
         @include('user.sections.slider')
-          
+
             <!-- End of .intro-section -->
 
 
-          
+
             <!-- End of .category-section top-category -->
 
             <div class="container">
-                
+
                 @include('user.sections.filter')
                 <!-- End of Tab Content -->
 
@@ -107,7 +107,7 @@
                 @include('user.sections.baner')
                 <!-- End of Banner Fashion -->
                 @include('user.sections.home_aplienc')
-             
+
                 <!-- End of Product Wrapper 1 -->
 
                 @include('user.sections.clients')
@@ -129,7 +129,7 @@
     <!-- End of Page-wrapper-->
 
     <!-- Start of Sticky Footer -->
- 
+
     <!-- End of Sticky Footer -->
 
     <!-- Start of Scroll Top -->
@@ -166,7 +166,7 @@
     <!-- End of Newsletter popup -->
 
     <!-- Start of Quick View -->
- 
+
     <!-- End of Quick view -->
 
     <!-- Plugin JS File -->

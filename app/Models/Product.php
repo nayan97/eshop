@@ -12,6 +12,6 @@ class Product extends Model
     Protected $guarded =[];
     public function ProductCats()
     {
-        return $this -> belongsToMany(Product_cat::class);
+        return $this -> belongsTo(Product_cat::class,'category','id');
     }
 }
