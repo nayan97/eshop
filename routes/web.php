@@ -3,10 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\admin\emailLoginController;
 use App\Http\Controllers\Admin\ProductCategoryController;
+
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 Route::get('/orders', [OrderController::class, 'index']);
 Route::get('/delivered/{id}', [OrderController::class, 'delivered']);
@@ -17,12 +24,8 @@ Route::post('/emailnote/{id}', [OrderController::class, 'emailnote']);
 Route::resource('/product_cat', ProductCategoryController::class);
 Route::resource('/product', ProductController::class);
 
+Route::resource('tag', TagController::class);
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
 
 Route::get('auth/google', [emailLoginController::class,'googlelogin']);
 Route::get('auth/google/callback', [emailLoginController::class,'googlecallback']);
