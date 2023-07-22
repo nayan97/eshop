@@ -32,6 +32,14 @@
 									<li><a href="error-500.html">500 Error </a></li>
 								</ul>
 							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-warning"></i> <span>Posts</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="{{ url('/orders')}}">Posts</a></li>
+									<li><a href="{{ url('/orders')}}">Category</a></li>
+									<li><a href="{{ url('/tag')}}">Tags</a></li>
+								</ul>
+							</li>
 							<li> 
 								<a href="{{ url('product_cat')}}"><i class="fe fe-user-plus"></i> <span>Category</span></a>
 							</li>

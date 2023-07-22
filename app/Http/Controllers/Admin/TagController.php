@@ -59,16 +59,34 @@ class TagController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
-        //
+    {   $edit = Tag::findOrfail($id);
+        $tags = Tag::latest()->get();
+        return view('admin.posts.tag.index',[
+            'form'    => 'edit',
+            'tags'    => $tags,
+            'edit'    => $edit
+
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
-        //
+    {   $updatetag = Tag::findOrfail($id);
+
+
+        $this -> validate($request,[
+            'name'   => 'required|unique:tags'
+        ]);
+
+        $updatetag -> update([
+            'name' => $request -> name,
+            'slug' =>Str::slug($request -> name)
+
+        ]);
+
+        return back() -> with('success', 'Tag Updated successfully');
     }
 
     /**
@@ -76,6 +94,10 @@ class TagController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $deleteData = Tag::findOrfail($id);
+
+        $deleteData -> delete();
+        
+        return redirect()->back()-> with('success', 'Product deleted successfuly');
     }
 }

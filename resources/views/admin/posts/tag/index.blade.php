@@ -47,8 +47,8 @@
                                             <td>{{$item -> created_at -> diffForHumans()}}</td>
                                             <td>
                                                 <!----<a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a>-->
-                                                <a class="btn btn-sm btn-warning" href="{{ route('product_cat.edit', $item -> id ) }}"><i class="fe fe-edit"></i></a>
-                                                <form onclick="return confirm('Are you sure to delete this')" action="{{ route('product_cat.destroy', $item -> id ) }}" class="d-inline delete-form" method="POST">
+                                                <a class="btn btn-sm btn-warning" href="{{ route('tag.edit', $item -> id ) }}"><i class="fe fe-edit"></i></a>
+                                                <form onclick="return confirm('Are you sure to delete this')" action="{{ route('tag.destroy', $item -> id ) }}" class="d-inline delete-form" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                     <button class="btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i></button>
@@ -106,7 +106,10 @@
                             @if ($form == 'edit') 
                              <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Add new Tag</h4>
+                                        <h4 class="card-title">Edit Tag</h4>
+                                        <span style="padding:0px">
+                                            <a class="btn btn-primary float-right" href="{{ url('tag')}}">Back</a>
+                                        </span>
                                     </div>
                                     <div class="card-body">
 
@@ -119,11 +122,12 @@
 
                                     @endif
 
-                                        <form action="{{ route('product_cat.store')}}" method="POST">
+                                        <form action="{{ route('tag.update', $edit -> id)}}" method="POST">
                                             @csrf
+                                            @method('PUT')
                                             <div class="form-group">
                                                 <label>Category Name</label>
-                                                <input name="name" type="text" class="form-control">
+                                                <input  value="{{ $edit -> name}}" name="name" type="text" class="form-control">
                                             </div>
                                         
                                             <div class="text-right">
