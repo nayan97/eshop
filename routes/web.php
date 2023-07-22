@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\admin\emailLoginController;
+use App\Http\Controllers\Admin\CategoryPostController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
@@ -25,6 +26,7 @@ Route::resource('/product_cat', ProductCategoryController::class);
 Route::resource('/product', ProductController::class);
 
 Route::resource('tag', TagController::class);
+Route::resource('categoryPost', CategoryPostController::class);
 
 
 Route::get('auth/google', [emailLoginController::class,'googlelogin']);

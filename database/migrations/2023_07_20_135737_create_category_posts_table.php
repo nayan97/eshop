@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('category_posts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->boolean('satus') -> default(true);
+            $table->boolean('trash') -> default(false);
             $table->timestamps();
         });
     }
