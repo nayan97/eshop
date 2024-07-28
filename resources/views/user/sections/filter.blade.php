@@ -1,3 +1,11 @@
+
+
+@php
+  $Product_cat = App\Models\Product_cat::all();
+
+@endphp
+
+
 {{-- <div class="container">
     <h2 class="title justify-content-center ls-normal mb-4 mt-10 pt-1 appear-animate">Popular Departments
     </h2>
@@ -74,7 +82,7 @@
             <li class="nav-item mr-2 mb-2">
                 <a class="nav-link br-sm font-size-md ls-normal active" href="#tab1-1">All</a>
             </li>
-            @foreach ($cat as $item)
+            @foreach ($Product_cat as $item)
                 <li class="nav-item mr-2 mb-2">
                     <a class="nav-link br-sm font-size-md ls-normal" href="#{{ $item->slug }}">{{ $item->name }}</a>
                 </li>
@@ -84,7 +92,7 @@
     <!-- End of Tab -->
     <div class="tab-content product-wrapper appear-animate fadeIn appear-animation-visible"
         style="animation-duration: 1.2s;">
-        @foreach ($cat as $item)
+        @foreach ($Product_cat as $item)
             <div class="tab-pane pt-4" id="{{ $item->slug }}">
                 <div class="row cols-xl-5 cols-md-4 cols-sm-3 cols-2">
                     @foreach ($product as $goods)

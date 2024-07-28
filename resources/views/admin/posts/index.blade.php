@@ -38,7 +38,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                         @forelse($all_data as $item)
+                                         @forelse($posts as $item)
                                          
                                          <tr>
                                             <td>{{$loop ->index + 1}}</td>
@@ -75,10 +75,9 @@
                             @if ($form == 'create') 
                             <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Add new product category</h4>
+                                        <h4 class="card-title">Add new Post</h4>
                                     </div>
                                     <div class="card-body">
-
                                     @if( $errors -> any())
                                     <p class="alert alert-danger">{{$errors -> first()}} <button class="close" data-dismiss="alert">&times;</button></p>
 
@@ -87,20 +86,95 @@
                                     <p class="alert alert-success">{{Session::get('success')}} <button class="close" data-dismiss="alert">&times;</button></p>
 
                                     @endif
-
-                                        <form action="{{ route('product_cat.store')}}" method="POST">
-                                            @csrf
-                                            <div class="form-group">
-                                                <label>Category Name</label>
-                                                <input name="name" type="text" class="form-control">
-                                            </div>
-                                        
-                                            <div class="text-right">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    <input name="title" type="text" value="{{ old('title') }}" class="form-control">
                                 </div> 
+
+                                <div class="form-group">
+                                    <label>Post Type</label>
+                                    <hr>
+                                    <select class="form-control" name="type" id="post-type-selector">
+                                        <option value="Standard">Standard</option>
+                                        <option value="Gallery">Gallery</option> 
+                                        <option value="Video">Video</option>
+                                        <option value="Audio">Audio</option>
+                                        <option value="Quote">Quote</option>
+                                    </select>
+                                    
+                                </div> 
+
+                                <div class="form-group post-standard">
+                                    <label>Featured Photo</label>
+                                    <br>
+                                    <img style="max-width:100%;" id="slider-photo-preview" src="" alt="">
+                                    <br>
+                                    <input style="display:none;" name="standard" type="file" class="form-control" id="slider-photo">
+                                    <label for="slider-photo">
+                                        <img style="width:100px; cursor:pointer;" src="https://icon-library.com/images/image-icon/image-icon-2.jpg" alt="">
+                                    </label>
+                                </div>
+                                <hr>
+
+                                <div class="form-group post-gallery">
+                                    <label>Gallery Photos</label>
+                                    <br>
+                                    <div class="port-gall">
+
+                                    </div>
+                                    <input style="display:none;" name="gallery[]" multiple type="file" class="form-control" id="portfolio-gallery">
+                                    <label for="portfolio-gallery">
+                                        <img style="width:100px; cursor:pointer;" src="https://icon-library.com/images/image-icon/image-icon-2.jpg" alt="">
+                                    </label>
+                                </div>
+
+                                <div class="form-group post-video">
+                                    <label>video Post</label>
+                                    <input name="video" type="text" value="{{ old('video') }}" class="form-control">
+                                </div> 
+
+                                <div class="form-group post-audio">
+                                    <label>Audio Post</label>
+                                    <input name="audio" type="text" value="{{ old('audio') }}" class="form-control">
+                                </div> 
+
+                                <div class="form-group post-quote">
+                                    <label>Quote</label>
+                                    <textarea class="form-control" name="quote" id="" cols="30" rows="4"></textarea>
+                                </div>
+                                
+
+                                <div class="form-group">
+                                    <label>Post Content</label>                        
+                                    <textarea name="content" id="portfolio-desc"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Categories</label>                        
+                                    <ul class="comet-list">
+                           
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Tags</label>
+                                    <select class="form-control comet-select-2" name="tag[]" id="" multiple>
+                                     
+                                    </select>
+                                </div>                    
+
+                                
+                            
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                                    
+                                    </div>
+                            </div>
                             @endif
 
                             @if ($form == 'edit') 

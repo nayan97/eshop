@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
@@ -11,8 +12,12 @@ class PostController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {   $posts =post::latest()-> get();
+        return view('admin.posts.index',[
+            'form'  => 'create',
+            'posts'  =>$posts
+
+        ]);
     }
 
     /**

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\admin\emailLoginController;
@@ -27,6 +28,7 @@ Route::resource('/product', ProductController::class);
 
 Route::resource('tag', TagController::class);
 Route::resource('categoryPost', CategoryPostController::class);
+Route::resource('posts', PostController::class);
 
 
 Route::get('auth/google', [emailLoginController::class,'googlelogin']);

@@ -35,7 +35,7 @@
 							<li class="submenu">
 								<a href="#"><i class="fe fe-warning"></i> <span>Posts</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="{{ url('/orders')}}">Posts</a></li>
+									<li><a href="{{ url('/posts')}}">Posts</a></li>
 									<li><a href="{{ url('/categoryPost')}}">Category</a></li>
 									<li><a href="{{ url('/tag')}}">Tags</a></li>
 								</ul>
